@@ -27,3 +27,29 @@ code {
   border-radius: 6%;
   margin: 5%;
 }
+
+.container1{
+  position: relative;
+  margin-left: 3%;
+}
+
+.container2{
+  position: relative;
+  margin-left: 3%;
+}
+.food-app-pay-btn {
+  display: block;
+  text-decoration: none;
+  width: 100%;
+  font-size: 20px;
+  border: none;
+  background-color: #ecc94b;
+  color: #2d3748;
+  padding: 20px 0;
+  border-radius: 6px;
+  font-weight: medium;
+}
+
+.menu-btn-group{
+  display: flex;
+}

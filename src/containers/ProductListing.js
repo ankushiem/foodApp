@@ -1,32 +1,35 @@
 import React,{useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ProductComponent from "./ProductComponents";
-import axios from "axios";
-import {setProducts} from "../redux/actions/productActions";
+import { fetchProducts} from "../redux/actions/productActions";
 
 
 const ProductListing = () => {
     const products = useSelector((state) => state);
     const dispatch = useDispatch();
 
-    const fetchProducts = async () => {
-        const response = await axios
-        .get("https://food-power.glitch.me/restaurants/")
-        .catch((err) => {
-            console.log("err", err);
-        });
-        console.log(response.data);
-        dispatch(setProducts(response.data.data));
-    };
-
     useEffect(() => {
-        fetchProducts();
+        dispatch(fetchProducts());
     },[]);
 
-    console.log("product: " ,products);
+    // console.log("product: " ,products);
     return (
         <div>
-            <ProductComponent/>
+            
+            <div className="p-3 mb-2 bg-secondary text-white ">
+            <div className="container">
+                <div className="row">
+                    <h1 className="col-5"> Product Details</h1>
+                    <div className="col-3 offset-4">
+                        
+                    </div>
+                </div>
+                <div>
+                    
+                    <ProductComponent/>
+                </div>
+            </div>
+            </div>
         </div>
     )
 }
